@@ -1,5 +1,5 @@
 {% set name = "python_cmethods" %}
-{% set version = "2.2.4" %}
+{% set version = "2.2.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1e01a0a89dcfbf7c991882190e2d2e6a7caa72878041ae1a39f9d8cb194ac9da
+  sha256: 5e28e3793894573bb473cedc681a3eac8610d7b2fbbcd3361961857b1d2eb8d9
 
 build:
   noarch: python
@@ -29,6 +29,7 @@ requirements:
     - netCDF4 >=1.6.1
     - numpy
     - cloup
+    - click
 
 test:
   imports:
