@@ -1,5 +1,5 @@
 {% set name = "python_cmethods" %}
-{% set version = "2.2.5" %}
+{% set version = "2.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5e28e3793894573bb473cedc681a3eac8610d7b2fbbcd3361961857b1d2eb8d9
+  sha256: 0dbd83f94000f4367c17a4b51820297081d77db6f4ea1117eae0e55930344092
 
 build:
   noarch: python
@@ -18,13 +18,13 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python >=3.9
     - pip
     - setuptools_scm
     - setuptools
     - wheel
   run:
-    - python >=3.8
+    - python >=3.9
     - xarray >=2022.11.0
     - netCDF4 >=1.6.1
     - numpy
