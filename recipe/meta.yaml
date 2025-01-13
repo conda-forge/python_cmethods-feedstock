@@ -6,25 +6,25 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 0dbd83f94000f4367c17a4b51820297081d77db6f4ea1117eae0e55930344092
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   entry_points:
     - "cmethods = cmethods:cli"
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - pip
     - setuptools_scm
     - setuptools
     - wheel
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - xarray >=2022.11.0
     - netCDF4 >=1.6.1
     - numpy
@@ -37,6 +37,7 @@ test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}
   commands:
     - pip check
     - cmethods --help
