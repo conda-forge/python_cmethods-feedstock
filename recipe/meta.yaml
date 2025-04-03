@@ -1,5 +1,5 @@
 {% set name = "python_cmethods" %}
-{% set version = "2.3.0" %}
+{% set version = "2.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0dbd83f94000f4367c17a4b51820297081d77db6f4ea1117eae0e55930344092
+  sha256: 8e70cf257335e12ce97de5e8eaeb24891d077bed0757e98f952b578bd945805d
 
 build:
   noarch: python
